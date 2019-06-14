@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/navigation_categories"
+        android:icon="@drawable/ic_horoscope"
+        android:title="Horoscope" />
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_newspaper"
+        android:title="News" />
+
+    <item
+        android:id="@+id/navigation_notify"
+        android:icon="@drawable/ic_navigation_notification"
+        android:title="Notifications" />
+
+    <item
+        android:id="@+id/navigation_setting"
+        android:icon="@drawable/ic_navigation_user_1"
+        android:title="Settings" />
+</menu>

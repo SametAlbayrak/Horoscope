@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "390072916090",
+    "firebase_url": "https://horoscope-d3d57.firebaseio.com",
+    "project_id": "horoscope-d3d57",
+    "storage_bucket": "horoscope-d3d57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:390072916090:android:7aef81b5e23fefe0",
+        "android_client_info": {
+          "package_name": "com.steelsoftware.horoscope"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "390072916090-7mggrha90s52j13a7o3o4agv3dafieg9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF5n-c1OIOygiJ1FKJidk06pFqfM7j8NY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "390072916090-7mggrha90s52j13a7o3o4agv3dafieg9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

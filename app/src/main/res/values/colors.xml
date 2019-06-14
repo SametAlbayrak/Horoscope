@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
+    <!--<color name="colorAccent">#FF4081</color>-->
+
+    <color name="colorPrimary">#8253d7</color>
+    <color name="colorPrimaryDark">#6a3cbc</color>
+    <color name="colorPrimaryLight">#FFCDD2</color>
+    <color name="colorAccent">#461b93</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#757575</color>
+    <color name="colorIcons">#FFFFFF</color>
+    <color name="colorDivider">#BDBDBD</color>
+
+
+    <color name="color_eerie_black">#1C1C1C</color>
+    <color name="color_deep_kouamaru">#2C3467</color>
+    <color name="color_dark_slate_blue">#38417D</color>
+    <color name="color_rhythm">#7776B1</color>
+    <color name="color_white">#FFFFFF</color>
+
+
+    <color name="color_deneme">#553c8b</color>
+    <color name="color_denem2">#9ea9f0</color>
+
+
+    <array name="color_pallette">
+        <item>#ff1744</item>
+        <item>#00c853</item>
+        <item>#3d5afe</item>
+        <item>#00b0ff</item>
+        <item>#1de9b6</item>
+        <item>#f9a825</item>
+        <item>#f5045a</item>
+        <item>#651fff</item>
+        <item>#00c853</item>
+        <item>#ff3d00</item>
+        <item>#90a4ae</item>
+        <item>#4db6ac</item>
+        <item>#ec407a</item>
+        <item>#3d5afe</item>
+    </array>
+
+
+</resources>
