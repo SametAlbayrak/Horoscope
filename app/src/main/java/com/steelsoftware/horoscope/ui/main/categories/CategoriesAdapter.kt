@@ -1,8 +1,8 @@
 package com.steelsoftware.horoscope.ui.main.categories
 
 import android.content.Context
-import android.support.v7.widget.CardView
-import android.support.v7.widget.RecyclerView
+import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,7 +19,7 @@ import com.steelsoftware.horoscope.utilities.getMenuIndexColor
  */
 class CategoriesAdapter(private val context: Context?, private val list: ArrayList<Category>,
                         private var listener: CategoriesAdapter.OnItemClickListener)
-    : RecyclerView.Adapter<CategoriesAdapter.ViewHolder>() {
+    : androidx.recyclerview.widget.RecyclerView.Adapter<CategoriesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoriesAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.category_list_item, parent, false)
@@ -38,11 +38,11 @@ class CategoriesAdapter(private val context: Context?, private val list: ArrayLi
         fun onItemClick(category: Category)
     }
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
         fun bindItems(data: Category, listener: OnItemClickListener?) {
             val categoryText: TextView = itemView.findViewById(R.id.category_title)
             val categoryImage: ImageView = itemView.findViewById(R.id.category_image)
-            val categoryImageCard: CardView = itemView.findViewById(R.id.category_image_card)
+            val categoryImageCard: androidx.cardview.widget.CardView = itemView.findViewById(R.id.category_image_card)
 
             categoryText.text = data.text
             categoryImageCard.setBackgroundColor(getMenuIndexColor(context!!, adapterPosition))

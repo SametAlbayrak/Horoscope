@@ -1,8 +1,8 @@
 package com.steelsoftware.horoscope.ui.main.categories
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
-import android.databinding.ObservableField
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.databinding.ObservableField
 import android.util.Log
 import com.steelsoftware.horoscope.data.NewsRepository
 import com.steelsoftware.horoscope.model.Articles

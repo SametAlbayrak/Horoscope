@@ -1,10 +1,10 @@
 package com.steelsoftware.horoscope.ui.main.home
 
-import android.arch.lifecycle.LiveData
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
-import android.databinding.ObservableBoolean
-import android.databinding.ObservableField
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.databinding.ObservableBoolean
+import androidx.databinding.ObservableField
 import android.util.Log
 import com.steelsoftware.horoscope.api.Status
 import com.steelsoftware.horoscope.data.NewsRepository

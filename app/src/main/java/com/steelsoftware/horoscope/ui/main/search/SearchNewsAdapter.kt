@@ -1,6 +1,6 @@
 package com.steelsoftware.horoscope.ui.main.search
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.steelsoftware.horoscope.R
@@ -14,7 +14,7 @@ import com.bumptech.glide.request.RequestOptions
  */
 class SearchNewsAdapter(private var items: List<Articles>,
                         private var listener: SearchNewsAdapter.OnItemClickListener)
-    : RecyclerView.Adapter<SearchNewsAdapter.ViewHolder>() {
+    : androidx.recyclerview.widget.RecyclerView.Adapter<SearchNewsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layoutInflater = LayoutInflater.from(parent?.context)
@@ -42,7 +42,7 @@ class SearchNewsAdapter(private var items: List<Articles>,
     // ViewHolder takes instance of RvItemNewsBinding type instead of View type so
     // we can implement Data Binding in ViewHolder for each item
     inner class ViewHolder(private var binding: RvItemSearchBinding) :
-            RecyclerView.ViewHolder(binding.root) {
+            androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {
 
         fun bind(news: Articles, listener: OnItemClickListener?) {
             binding.news = news

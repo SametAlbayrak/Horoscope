@@ -1,17 +1,17 @@
 package com.steelsoftware.horoscope.ui.main.home
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProvider
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import android.content.Context
-import android.databinding.DataBindingUtil
+import androidx.databinding.DataBindingUtil
 import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Bundle
-import android.support.customtabs.CustomTabsIntent
-import android.support.design.widget.Snackbar
-import android.support.v4.content.ContextCompat
-import android.support.v7.widget.LinearLayoutManager
+import androidx.browser.customtabs.CustomTabsIntent
+import com.google.android.material.snackbar.Snackbar
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -67,7 +67,7 @@ class HomeFragment : DaggerFragment(), HomeNewsAdapter.OnItemClickListener {
 
 
         // setting up recycler view
-        binding.repositoryRv.layoutManager = LinearLayoutManager(activity)
+        binding.repositoryRv.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(activity)
         binding.repositoryRv.adapter = repositoryRecyclerViewAdapter
 
 

@@ -4,10 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v4.app.Fragment
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -39,14 +39,14 @@ class CategoriesFragment : Fragment(), CategoriesAdapter.OnItemClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val categoriesRv: RecyclerView = view!!.findViewById(R.id.categories_recyclerView)
+        val categoriesRv: androidx.recyclerview.widget.RecyclerView = view!!.findViewById(R.id.categories_recyclerView)
         admobAdview = view!!.findViewById<View>(R.id.admob_adview) as AdView
 
         categoriesRv.setHasFixedSize(true)
         categoriesRv.setItemViewCacheSize(10)
         categoriesRv.isDrawingCacheEnabled = true
         categoriesRv.drawingCacheQuality = View.DRAWING_CACHE_QUALITY_HIGH
-        categoriesRv.layoutManager = GridLayoutManager(activity, 3)
+        categoriesRv.layoutManager = androidx.recyclerview.widget.GridLayoutManager(activity, 3)
 
         val items = ArrayList<Category>()
         addItems(itemList = items)

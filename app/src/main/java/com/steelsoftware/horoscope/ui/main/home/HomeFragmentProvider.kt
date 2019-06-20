@@ -1,6 +1,6 @@
 package com.steelsoftware.horoscope.ui.main.home
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 import com.steelsoftware.horoscope.utilities.di.ViewModelKey
 import dagger.Binds
 import dagger.Module

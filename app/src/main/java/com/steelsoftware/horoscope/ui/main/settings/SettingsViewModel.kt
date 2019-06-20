@@ -1,6 +1,6 @@
 package com.steelsoftware.horoscope.ui.main.settings
 
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.ViewModel
 import com.steelsoftware.horoscope.data.NewsRepository
 import javax.inject.Inject
 

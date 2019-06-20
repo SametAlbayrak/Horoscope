@@ -1,8 +1,8 @@
 package com.steelsoftware.horoscope.ui.main
 
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.view.ViewPager
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.viewpager.widget.ViewPager
 import com.steelsoftware.horoscope.R
 import dagger.android.support.DaggerAppCompatActivity
 

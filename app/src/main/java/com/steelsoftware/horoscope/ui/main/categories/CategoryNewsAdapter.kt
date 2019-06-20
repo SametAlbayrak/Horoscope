@@ -1,6 +1,6 @@
 package com.steelsoftware.horoscope.ui.main.categories
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -17,7 +17,7 @@ import java.util.*
  */
 class CategoryNewsAdapter(private var items: List<Articles>,
                           private var listener: CategoryNewsAdapter.OnItemClickListener)
-    : RecyclerView.Adapter<CategoryNewsAdapter.ViewHolder>() {
+    : androidx.recyclerview.widget.RecyclerView.Adapter<CategoryNewsAdapter.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -55,7 +55,7 @@ class CategoryNewsAdapter(private var items: List<Articles>,
     // ViewHolder takes instance of RvItemNewsBinding type instead of View type so
     // we can implement Data Binding in ViewHolder for each item
     inner class ViewHolder(private var binding: RvItemNewsBinding) :
-            RecyclerView.ViewHolder(binding.root) {
+            androidx.recyclerview.widget.RecyclerView.ViewHolder(binding.root) {
 
         fun bind(news: Articles, listener: OnItemClickListener?) {
             binding.news = news
