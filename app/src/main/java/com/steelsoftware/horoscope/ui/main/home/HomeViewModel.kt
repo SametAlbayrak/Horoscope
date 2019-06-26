@@ -1,11 +1,12 @@
 package com.steelsoftware.horoscope.ui.main.home
 
+import android.util.Log
+import androidx.databinding.ObservableBoolean
+import androidx.databinding.ObservableField
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.databinding.ObservableBoolean
-import androidx.databinding.ObservableField
-import android.util.Log
+
 import com.steelsoftware.horoscope.api.Status
 import com.steelsoftware.horoscope.data.NewsRepository
 import com.steelsoftware.horoscope.model.Articles
@@ -17,10 +18,6 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
-
-/**
- * Created by ansh on 13/02/18.
- */
 
 // All of our view models should extend the ViewModel() class
 class HomeViewModel @Inject constructor(var newsRepository: NewsRepository) : ViewModel() {
@@ -75,11 +72,9 @@ class HomeViewModel @Inject constructor(var newsRepository: NewsRepository) : Vi
 
                         news.value = arrayListOf()
 
-                        if(e.message!!.contains("Unable to resolve host")){
+                        if (e.message!!.contains("Unable to resolve host")) {
                             status.value = Status.NO_NETWORK
-                        }
-
-                        else{
+                        } else {
                             status.value = Status.ERROR
                         }
                     }

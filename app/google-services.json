@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "390072916090-cfm1o4jrp41ngek1lj9bsvc1jdlvq0g5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.steelsoftware.horoscope",
+            "certificate_hash": "3f17a392057e65a71536934b03f02ab0b7581595"
+          }
+        },
+        {
           "client_id": "390072916090-7mggrha90s52j13a7o3o4agv3dafieg9.apps.googleusercontent.com",
           "client_type": 3
         }

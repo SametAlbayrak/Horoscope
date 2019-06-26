@@ -1,15 +1,14 @@
 package com.steelsoftware.horoscope.ui.main.home
 
-import androidx.recyclerview.widget.RecyclerView
 import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.steelsoftware.horoscope.R
-import com.steelsoftware.horoscope.databinding.RvItemNewsBinding
-import com.steelsoftware.horoscope.model.Articles
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade
 import com.bumptech.glide.request.RequestOptions
+import com.steelsoftware.horoscope.R
+import com.steelsoftware.horoscope.databinding.RvItemNewsBinding
+import com.steelsoftware.horoscope.model.Articles
 import java.text.SimpleDateFormat
 import java.util.*
 

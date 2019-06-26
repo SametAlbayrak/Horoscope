@@ -1,21 +1,20 @@
 package com.steelsoftware.horoscope.ui.main.home
-
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 import android.content.Context
-import androidx.databinding.DataBindingUtil
 import android.net.ConnectivityManager
 import android.net.Uri
 import android.os.Bundle
-import androidx.browser.customtabs.CustomTabsIntent
-import com.google.android.material.snackbar.Snackbar
-import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.LinearLayoutManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.browser.customtabs.CustomTabsIntent
+import androidx.core.content.ContextCompat
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.snackbar.Snackbar
 import com.steelsoftware.horoscope.R
 import com.steelsoftware.horoscope.api.Status
 import com.steelsoftware.horoscope.databinding.FragmentHomeBinding
@@ -24,9 +23,6 @@ import dagger.android.support.DaggerFragment
 import javax.inject.Inject
 
 
-/**
- * Created by ansh on 22/02/18.
- */
 class HomeFragment : DaggerFragment(), HomeNewsAdapter.OnItemClickListener {
 
     // FragmentHomeBinding class is generated at compile time so build the project first
@@ -67,7 +63,7 @@ class HomeFragment : DaggerFragment(), HomeNewsAdapter.OnItemClickListener {
 
 
         // setting up recycler view
-        binding.repositoryRv.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(activity)
+        binding.repositoryRv.layoutManager = LinearLayoutManager(activity)
         binding.repositoryRv.adapter = repositoryRecyclerViewAdapter
 
 

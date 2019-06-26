@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import com.steelsoftware.horoscope.ui.main.MainActivity
 import com.steelsoftware.horoscope.ui.main.categories.CategoryNewsActivity
 import com.steelsoftware.horoscope.ui.main.categories.CategoryViewModel
+import com.steelsoftware.horoscope.ui.main.detail.DetailFragmentProvider
 import com.steelsoftware.horoscope.ui.main.home.HomeFragmentProvider
-import com.steelsoftware.horoscope.ui.main.profile.ProfileFragmentProvider
 import com.steelsoftware.horoscope.ui.main.search.SearchFragmentProvider
 import com.steelsoftware.horoscope.ui.main.settings.SettingsFragmentProvider
 import com.steelsoftware.horoscope.utilities.di.ViewModelKey
@@ -24,7 +24,8 @@ internal abstract class ActivityModule {
     @ContributesAndroidInjector(modules = [
         (HomeFragmentProvider::class),
         (SearchFragmentProvider::class),
-        (SettingsFragmentProvider::class)
+        (SettingsFragmentProvider::class),
+        (DetailFragmentProvider::class)
     ])
     internal abstract fun bindMainActivity(): MainActivity
 

@@ -4,20 +4,19 @@ import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.steelsoftware.horoscope.R
-import com.steelsoftware.horoscope.ui.uimodels.Category
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.AdView
-import kotlinx.android.synthetic.main.fragment_search.*
+import com.google.android.material.snackbar.Snackbar
+import com.steelsoftware.horoscope.R
+import com.steelsoftware.horoscope.ui.uimodels.Category
 
 /**
  * Created by ansh on 22/02/18.
@@ -39,14 +38,14 @@ class CategoriesFragment : Fragment(), CategoriesAdapter.OnItemClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val categoriesRv: androidx.recyclerview.widget.RecyclerView = view!!.findViewById(R.id.categories_recyclerView)
+        val categoriesRv: RecyclerView = view!!.findViewById(R.id.categories_recyclerView)
         admobAdview = view!!.findViewById<View>(R.id.admob_adview) as AdView
 
         categoriesRv.setHasFixedSize(true)
         categoriesRv.setItemViewCacheSize(10)
         categoriesRv.isDrawingCacheEnabled = true
         categoriesRv.drawingCacheQuality = View.DRAWING_CACHE_QUALITY_HIGH
-        categoriesRv.layoutManager = androidx.recyclerview.widget.GridLayoutManager(activity, 3)
+        categoriesRv.layoutManager = GridLayoutManager(activity, 3)
 
         val items = ArrayList<Category>()
         addItems(itemList = items)
@@ -107,10 +106,15 @@ class CategoriesFragment : Fragment(), CategoriesAdapter.OnItemClickListener {
 
     override fun onItemClick(category: Category) {
         val isConnected = isConnectedToInternet()
+
+
+
         if (isConnected) {
             val intent = Intent(activity, CategoryNewsActivity::class.java)
             intent.putExtra("CATEGORY", category.text)
             startActivity(intent)
+
+
         } else {
             Snackbar.make(this.view!!, "You are not connected to the internet", Snackbar.LENGTH_LONG).show()
         }
