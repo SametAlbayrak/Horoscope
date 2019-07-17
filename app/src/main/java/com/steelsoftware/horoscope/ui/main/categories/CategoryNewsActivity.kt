@@ -12,10 +12,13 @@ import androidx.browser.customtabs.CustomTabsIntent
 import com.google.android.material.snackbar.Snackbar
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.steelsoftware.horoscope.R
 import com.steelsoftware.horoscope.databinding.ActivityCategoryNewsBinding
 import com.steelsoftware.horoscope.model.Articles
+import com.steelsoftware.horoscope.ui.main.detail.adapter.TaskAdapter
 import dagger.android.support.DaggerAppCompatActivity
+import kotlinx.android.synthetic.main.activity_category_news.*
 import javax.inject.Inject
 
 class CategoryNewsActivity : DaggerAppCompatActivity(), CategoryNewsAdapter.OnItemClickListener {
@@ -24,8 +27,11 @@ class CategoryNewsActivity : DaggerAppCompatActivity(), CategoryNewsAdapter.OnIt
     // lateinit modifier allows us to have non-null variables waiting for initialization
     private lateinit var binding: ActivityCategoryNewsBinding
 
+    private val taskAdapter = TaskAdapter()
+
+
     // arrayListOf() returns an empty new arrayList
-    private val repositoryRecyclerViewAdapter = CategoryNewsAdapter(arrayListOf(), this)
+    //   private val repositoryRecyclerViewAdapter = CategoryNewsAdapter(arrayListOf(), this)
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -41,7 +47,6 @@ class CategoryNewsActivity : DaggerAppCompatActivity(), CategoryNewsAdapter.OnIt
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_category_news)
 
-
         val intent = intent
         if (intent.hasExtra("CATEGORY")) {
             category = intent.getStringExtra("CATEGORY")
@@ -51,22 +56,24 @@ class CategoryNewsActivity : DaggerAppCompatActivity(), CategoryNewsAdapter.OnIt
         viewModel = ViewModelProviders.of(this, viewModelFactory)
                 .get(CategoryViewModel::class.java)
 
-        if (viewModel.getNewsCategory() == null) {
-            viewModel.setNewsCategory(category)
-        }
-
+        /*   if (viewModel.getNewsCategory() == null) {
+               viewModel.setNewsCategory(category)
+           }
+   */
 
         binding.viewModel = viewModel
         binding.executePendingBindings()
 
-        binding.repositoryRv.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
-        binding.repositoryRv.adapter = repositoryRecyclerViewAdapter
+
+        rv_yorumlar.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+        rv_yorumlar.adapter = taskAdapter
 
 
-        viewModel.news.observe(this,
-                Observer<List<Articles>> { it?.let { repositoryRecyclerViewAdapter.replaceData(it) } })
-
+        viewModel.taskList.observe(this, Observer {
+            taskAdapter.setItems(it)
+        })
     }
+
 
     override fun onItemClick(article: Articles) {
         val isConnected = isConnectedToInternet()

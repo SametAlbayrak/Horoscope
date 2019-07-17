@@ -5,14 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.steelsoftware.horoscope.R
 import com.steelsoftware.horoscope.databinding.FragmentDetailBinding
+import com.steelsoftware.horoscope.ui.main.detail.adapter.TaskAdapter
 import dagger.android.support.DaggerFragment
+import kotlinx.android.synthetic.main.fragment_detail.*
 import javax.inject.Inject
 
 class DetailFragment : DaggerFragment() {
+
+
+    private val taskAdapter = TaskAdapter()
 
     private lateinit var binding: FragmentDetailBinding
 
@@ -42,5 +50,20 @@ class DetailFragment : DaggerFragment() {
 
         binding.viewModel = viewModel
         binding.executePendingBindings()
+
+        recyclerview.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL, false)
+        recyclerview.adapter = taskAdapter
+
+
+        viewModel.taskList.observe(this, Observer {
+            taskAdapter.setItems(it)
+        })
+
+        /*  addTask.setOnClickListener {
+              viewModel.addTask(taskTitle.text.toString())
+              taskTitle.text?.clear()
+          }
+  */
+
     }
 }

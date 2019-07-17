@@ -68,6 +68,7 @@ dependencies {
     implementation 'com.onesignal:OneSignal:3.10.9'
 
 
+    implementation "com.google.firebase:firebase-firestore:20.1.0"
     implementation 'com.google.firebase:firebase-core:16.0.9'
     implementation 'com.google.firebase:firebase-ads:17.2.1'
 

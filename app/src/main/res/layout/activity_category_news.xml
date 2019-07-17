@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
-        <import type="android.view.View"/>
+        <import type="android.view.View" />
 
         <variable
             name="viewModel"
-            type="com.steelsoftware.horoscope.ui.main.categories.CategoryViewModel"/>
+            type="com.steelsoftware.horoscope.ui.main.categories.CategoryViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,34 +18,113 @@
         android:layout_height="match_parent"
         tools:context=".ui.screens.main.MainActivity">
 
-        <ProgressBar
-            android:id="@+id/loading"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:background="@drawable/ic_libra"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="@dimen/margin_8"
+            android:background="@color/color_denem2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_background" />
+
+
+        <TextView
+            android:id="@+id/tv_horoscope_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Libra"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_icon" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25 eylül - 25 ekim"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_horoscope_name" />
+
+
+        <LinearLayout
+            android:id="@+id/llTabs"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_background">
+
+            <TextView
+                android:id="@+id/tv_daily"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/color_deneme"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="GÜNLÜK YORUM"
+                android:textColor="@color/color_white"
+                android:textSize="12sp"
+                tools:text="GÜNLÜK YORUM" />
+
+            <TextView
+                android:id="@+id/tv_features"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:background="@color/color_white"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="ÖZELLİKLER"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                tools:text="ÖZELLİKLER" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_daily_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llTabs"
+            tools:text="asdaşsdadşk d sladşsa asld şalskd şsdlşakd asş dkşasld aşlksşadkşsld" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_yorumlar"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
             android:layout_marginBottom="8dp"
-            android:layout_marginTop="8dp"
-            android:indeterminate="true"
-            android:visibility="@{viewModel.isLoading ? View.VISIBLE : View.GONE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
-
-
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/repository_rv"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginBottom="0dp"
-                android:indeterminate="true"
-                android:visibility="@{viewModel.isLoading ? View.GONE : View.VISIBLE}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
+            app:layout_constraintTop_toBottomOf="@+id/llTabs" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </layout>

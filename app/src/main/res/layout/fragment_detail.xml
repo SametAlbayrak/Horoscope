@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <import type="android.view.View" />
-
         <variable
             name="viewModel"
             type="com.steelsoftware.horoscope.ui.main.detail.DetailViewModel" />
@@ -16,6 +15,101 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.screens.main.MainActivity">
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_background"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/ic_libra"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="@dimen/margin_16"
+            android:background="@color/color_denem2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_background" />
+
+
+        <TextView
+            android:id="@+id/tv_horoscope_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Libra"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_icon" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="25 eylül - 25 ekim"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_horoscope_name" />
+
+
+        <LinearLayout
+            android:id="@+id/llTabs"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_background">
+
+            <TextView
+                android:id="@+id/tv_daily"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/color_deneme"
+                android:gravity="center"
+                android:maxLines="1"
+                android:padding="4dp"
+                android:text="günlük YORUM"
+                android:textColor="@color/color_white"
+                android:textSize="12sp"
+                android:visibility="gone"
+                tools:text="DÖNEM İÇİ İŞLEMLER" />
+
+            <TextView
+                android:id="@+id/tv_features"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:background="@color/color_white"
+                android:gravity="center"
+                android:maxLines="1"
+                android:padding="4dp"
+                android:text="ÖZELLİKLER"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="12sp"
+                android:visibility="gone"
+                tools:text="ONAYDA BEKLEYEN" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llTabs">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

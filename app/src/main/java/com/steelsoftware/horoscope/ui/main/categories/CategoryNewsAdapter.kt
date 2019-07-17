@@ -1,14 +1,13 @@
 package com.steelsoftware.horoscope.ui.main.categories
 
-import androidx.recyclerview.widget.RecyclerView
 import android.text.format.DateUtils
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.steelsoftware.horoscope.R
 import com.steelsoftware.horoscope.databinding.RvItemNewsBinding
 import com.steelsoftware.horoscope.model.Articles
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import java.text.SimpleDateFormat
 import java.util.*
 
