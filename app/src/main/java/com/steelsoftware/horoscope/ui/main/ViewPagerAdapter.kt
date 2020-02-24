@@ -14,13 +14,14 @@ class ViewPagerAdapter(fragmentManager: FragmentManager) : FragmentPagerAdapter(
         return 4
     }
 
-    override fun getItem(position: Int): Fragment? {
+    override fun getItem(position: Int): Fragment {
         return when (position) {
             0 -> CategoriesFragment.newInstance()
             1 -> HomeFragment.newInstance()
             2 -> SearchFragment.newInstance()
             3 -> SettingsFragment.newInstance()
-            else -> null
+            else
+            -> HomeFragment.newInstance()
         }
     }
 

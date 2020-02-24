@@ -1,4 +1,5 @@
 package com.steelsoftware.horoscope.ui.main.home
+
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.Uri
@@ -99,7 +100,7 @@ class HomeFragment : DaggerFragment(), HomeNewsAdapter.OnItemClickListener {
             builder.setStartAnimations(activity!!, R.anim.slide_in_right, R.anim.slide_out_left)
             builder.setExitAnimations(activity!!, android.R.anim.slide_in_left,
                     android.R.anim.slide_out_right)
-            builder.build().launchUrl(activity, Uri.parse(article.url))
+            builder.build().launchUrl(activity!!, Uri.parse(article.url))
         } else {
             Snackbar.make(binding.constraintLayout, "You are not connected to the internet", Snackbar.LENGTH_LONG).show()
         }
