@@ -1,6 +1,6 @@
 
 # Horoscope
-### A simple and easy to use news app entirely written in Kotlin using MVVM architecture, Databinding, RxJava, Dagger.
+### Kotlin Mvvm mimarili burçlar uygulaması Kullanılan teknolojiler Dagger2, Databinding, Retrofit, RxJava, Glide.
 
 
 
